@@ -16,15 +16,17 @@ import {
   Loading3QuartersOutlined
 } from "@ant-design/icons";
 
-import { useGetCryptoDetailsQuery } from "../services/cryptoAPI";
+import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from "../services/cryptoAPI";
+import LineChart from "./LineChart";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
 
 const CryptoDetails = () => {
   const { coinId } = useParams();
-  const [timeperiod, setTimeperiod] = useState("7d");
+  const [timePeriod, setTimePeriod] = useState("7d");
   const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
+  const { data: coinHistory}=useGetCryptoHistoryQuery({coinId, timePeriod});
   const cryptoDetails = data?.data?.coin;
 
   if (isFetching) return "loading...";
@@ -112,12 +114,13 @@ const CryptoDetails = () => {
         defaultValue="7d"
         className="select-timeperiod"
         placeholder="Select Timeperiod"
-        onChange={(value) => setTimeperiod(value)}
+        onChange={(value) => setTimePeriod(value)}
       >
         {time.map((date) => (
           <Option key={date}>{date}</Option>
         ))}
       </Select>
+      <LineChart />
       <Col className="stats-container">
         <Col className="coin-value-statistics">
           <Col className="coin-value-statistics-heading">
