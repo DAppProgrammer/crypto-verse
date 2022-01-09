@@ -31,7 +31,7 @@ const Exchanges = () => {
                 key={exchange.uuid}
                 showArrow={false}
                 header={(
-                  <Row key={exchange.uuid}>
+                  <Row key={exchange.uuid} style={{flex:1}}>
                     <Col span={6}>
                       <Text><strong>{exchange.rank}.</strong></Text>
                       <Avatar className="exchange-image" src={exchange.iconUrl} />
@@ -42,6 +42,7 @@ const Exchanges = () => {
                     <Col span={6}>{millify(exchange.marketShare)}%</Col>
                   </Row>
                   )}
+                  
               >
                 {HTMLReactParser(exchange.description || '')}
               </Panel>
