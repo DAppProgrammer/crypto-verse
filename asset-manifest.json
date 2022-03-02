@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.6c663236.css",
+    "main.js": "/react-gh-pages/static/js/main.e7930615.js",
+    "static/media/cryptocurrency.png": "/react-gh-pages/static/media/cryptocurrency.1548aced3f0605895bac.png",
+    "index.html": "/react-gh-pages/index.html",
+    "main.6c663236.css.map": "/react-gh-pages/static/css/main.6c663236.css.map",
+    "main.e7930615.js.map": "/react-gh-pages/static/js/main.e7930615.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6c663236.css",
+    "static/js/main.e7930615.js"
+  ]
+}
